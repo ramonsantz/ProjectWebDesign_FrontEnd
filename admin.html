@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Filmes</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+    <h1>Sistema de Gerenciamento de Filmes</h1>
+
+    <div id="formulario">
+        <input id="nome" type="text" placeholder="Nome do Filme" />
+        <input id="sinopse" type="text" placeholder="Sinopse do Filme" />
+        <input id="valor" type="number" placeholder="Valor do Filme" />
+        <button onclick="adicionarFilme()">Adicionar Filme</button>
+    </div>
+    <br>
+    <h2>Lista de Filmes</h2>
+    <div id="lista-filmes"></div>
+
+    <script src="crud.js"></script>
+</body>
+</html>

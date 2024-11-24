@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Filmes</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <img src="../images/logoFilmes.webp" alt="Logo de Filmes" id="logo">
+  </header>
+
+  <main>
+    <h1 class="titulo-site">Lista de Filmes</h1>
+    <div id="filmes-lista"></div>
+  </main>
+
+  <script src="../dados.js"></script>
+  <script>
+    const filmesContainer = document.getElementById('filmes-lista');
+
+    dadosApi.filmes.forEach(filme => {
+      const filmeCard = document.createElement('div');
+      filmeCard.classList.add('card-filme');
+      filmeCard.innerHTML = `
+        <img src="${filme.image}" alt="${filme.nome}" class="card-imagem" />
+        <h3>${filme.nome}</h3>
+        <p class="sinopse">${filme.sinopse}</p>
+        <p><strong>Valor:</strong> R$${filme.valor}</p>
+      `;
+      filmesContainer.appendChild(filmeCard);
+    });
+  </script>
+</body>
+</html>
